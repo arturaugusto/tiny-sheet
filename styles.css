@@ -1,0 +1,108 @@
+.tnys-table th {
+  position:sticky;
+  top: 0px;
+}
+
+/* 
+Table styles
+Based on Bulma github.com/jgthms/bulma
+*/
+
+.tnys-table {
+  
+  border-collapse: collapse;
+  border-spacing: 0;
+  user-select: none;
+}
+
+.tnys-table td, .tnys-table th {
+  border: 1px solid #c6bebe;
+  padding: 0em 0em;
+  min-height: 150px;
+}
+
+
+/* remove this block if you don't want first columns as sequential number */
+.tnys-table td:first-child, .tnys-table th:first-child {
+  padding-left: 6px;
+  padding-right : 6px;
+  background-color: #f6f4f4;
+  text-align: center;
+  position:sticky;
+  left: 0px;
+  z-index: 10;
+  min-width: 32px;
+}
+
+/* remove this block if you don't want first columns as sequential number */
+.tnys-table td:first-child:after,
+.tnys-table th:first-child:after,
+.tnys-table th:after
+ {
+  content:'';
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #c6bebe;
+}
+
+
+
+.tnys-table th {
+  padding: 6px;
+  background-color: #f6f4f4;
+}
+
+.tnys:not(.tnys-editing) {
+  cursor:cell;
+}
+.tnys-sel {
+  background-color: #e2e9e9;
+  border: 1px solid #e2e9e9;
+}
+.tnys-focus:not(.tnys-editing) {
+  /*hide caret*/
+  color: transparent;text-shadow: 0 0 0 black;
+}
+
+/*.tnys-sel-left {border-left: 1px solid black;}
+.tnys-sel-right {border-right: 1px solid black;}
+.tnys-sel-top {border-top: 1px solid black;}
+.tnys-sel-bottom {border-bottom: 1px solid black;}*/
+
+.tnys-focus {
+  border: 1px solid black;
+  background-color: #ffffff;
+}
+
+.tnys-editing {
+  border: 1px solid black;
+}
+
+input {
+  max-width: 200px;
+  border-radius: 0em;
+  color: black;
+  font-size: 1rem;
+  border: 1px solid rgba(0,0,0,0);
+  -webkit-appearance: none;
+  padding-bottom: calc(.5em - 1px);
+  padding-left: calc(.75em - 1px);
+  padding-right: calc(.75em - 1px);
+  padding-top: calc(.5em - 1px);
+}
+
+input:focus {
+  outline: none;
+}
+
+.tnys-editing {
+  
+}
+
+.tnys-table th:first-child {
+  z-index: 100;
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./styles.css">
+  <title></title>
+  <style type="text/css">
+    html {
+      font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    }
+
+    .tnys-container {
+      display: inline-block;
+      overflow: auto;
+      /*max-height: 70vh;*/
+    }
+
+    button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    code {
+      background: aquamarine;
+      padding: 6px;
+      border-radius: 7px;
+    }
+
+    pre {
+      background: gainsboro;
+      width: 300px;
+    }      
+
+  </style>
+</head>
+<body>
+  <h3>Tiny-sheet</h3>  
+
+  <div class="tnys-container">
+    <table class="tnys-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>A</th>
+          <th>B</th>
+          <th>C</th>
+          <th>D</th>
+          <th>E</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><input></td>
+          <td><input></td>
+          <td><input></td>
+          <td><input></td>
+          <td><input></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><input></td>
+          <td><input></td>
+          <td><input></td>
+          <td><input></td>
+          <td><input></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><input></td>
+          <td><input></td>
+          <td><input></td>
+          <td><input></td>
+          <td><input></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><input></td>
+          <td><input></td>
+          <td><input></td>
+          <td><input></td>
+          <td><input></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+    <button id="addRow">Add row</button>
+  </div>
+
+  <hr>
+
+  <h4>Creating a instance</h4>
+
+  <code>let tnys = new tinySheet(tbodyElement, {patches: patches})</code>
+  <p>
+    Omit the second argument to create a clean sheet.
+  </p>
+
+
+  <hr>
+
+  <h4>Getting the data</h4>
+
+  <div>
+    <code>tnys.getData()</code>
+
+    <div>
+      <button id="getData">Get Data</button>
+    </div>
+    
+    <div>
+      <pre id="getDataOut"></pre>
+    </div>
+
+    <p>To get the patches data from a tiny-sheet instance, access the <code>tnys.patches</code> property.</p>
+
+    <div>
+      <pre id="patchesOut"></pre>
+    </div>
+
+
+
+  </div>
+
+
+  <script src="./src/index.js"></script>
+  <script type="text/javascript">
+
+    // create a tinySheet instance with some data.
+    // The second argument can be omitted to create a blank sheet
+    tnys = new tinySheet(document.getElementsByTagName('tbody')[0], {
+      patches: [
+        [
+          {
+            "op": "add",
+            "path": "/1_1",
+            "value": "Hello"
+          }
+        ],
+        [
+          {
+            "op": "add",
+            "path": "/1_2",
+            "value": "tiny sheet!"
+          }
+        ]
+      ]
+    })
+    console.log(tnys)
+    
+    // sample code for adding rows
+    document.getElementById('addRow').addEventListener('click', () => {
+      // create a table row element
+      let newRowEl = document.createElement('tr')
+      // as we have 6 columns (1 for sequencial number and 5 for data)
+      // start a loop to add cells
+      for(let colIndex = 0;colIndex < 6;colIndex++) {
+        // create cell element
+        let newCellEl = document.createElement('td')
+        // do NOT add input element on first col...
+        if (colIndex !== 0) {
+          // create input field
+          let inputEl = document.createElement('input')
+          // add input field to cell
+          newCellEl.appendChild(document.createElement('input'))
+        } else {
+          // ... and set a sequencial number instead
+          newCellEl.innerText = tnys.containerEl.childElementCount + 1
+        }
+        // add row cell
+        newRowEl.appendChild(newCellEl)
+      }
+      // add table row
+      tnys.containerEl.appendChild(newRowEl)
+      // the update() method is necessary to tell tnys about the new elements
+      tnys.update()
+    })
+
+
+    // get data
+    document.getElementById('getData').addEventListener('click', () => {
+      document.getElementById('getDataOut').innerText = JSON.stringify(tnys.getData(), undefined, 2)
+      document.getElementById('patchesOut').innerText = JSON.stringify(tnys.patches, undefined, 2)
+    })
+
+  </script>
+</body>
+</html>
