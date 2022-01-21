@@ -1,8 +1,8 @@
 {
   "name": "tiny-sheet-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tiny spreadsheet-like web component.",
-  "main": "dist/index.js",
+  "main": "dist/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
