@@ -7,6 +7,8 @@ module.exports = {
   mode: 'production',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    libraryTarget: 'umd',
+    globalObject: 'this',    
+    path: path.resolve(__dirname, 'dist')
   },
 };
