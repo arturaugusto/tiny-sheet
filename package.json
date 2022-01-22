@@ -1,6 +1,6 @@
 {
   "name": "tiny-sheet-js",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Tiny spreadsheet-like web component.",
   "main": "dist/tinySheet.min.js",
   "scripts": {
