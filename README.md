@@ -101,6 +101,8 @@ Or download `tinySheet.min.js` from dist folder.
 * Multi-select with mouse
 * Multi-select with shift + arrow keys
 * Skip navigation using Ctrl key
+* Paste to area bigger than original repeating the data
+* Tab/Enter navigation over selected region
 * Can (must) be used with your generated dom
 
 
