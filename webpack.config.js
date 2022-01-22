@@ -21,7 +21,6 @@ module.exports = {
   },
   output: {
     filename: 'tinySheet.min.js',
-    library: 'tinySheet',
     libraryTarget: 'umd',
     globalObject: 'this',
     path: path.resolve(__dirname, 'dist')
