@@ -108,3 +108,7 @@ Or download `tinySheet.min.js` from dist folder.
 
 importabular https://lecaro.me/importabular/  
 BomTable https://lebonnet.github.io/  
+
+
+## License
+MIT
