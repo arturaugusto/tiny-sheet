@@ -1,4 +1,4 @@
-function tinySheet(containerEl, options) {
+tinySheet = function(containerEl, options) {
   this.containerEl = containerEl
   
   let elements = Array.from(containerEl.getElementsByTagName('input'))

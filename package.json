@@ -2,10 +2,10 @@
   "name": "tiny-sheet-js",
   "version": "0.0.3",
   "description": "Tiny spreadsheet-like web component.",
-  "main": "dist/main.js",
+  "main": "dist/tinySheet.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src -d dist"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,11 @@
     "table",
     "tabular"
   ],
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
   "author": "Artur Augusto Martins",
   "license": "MIT",
   "bugs": {
@@ -27,6 +32,7 @@
     "@babel/cli": "^7.16.8",
     "@babel/core": "^7.16.10",
     "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
     "webpack": "^5.66.0",
     "webpack-cli": "^4.9.1"
   }

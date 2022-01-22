@@ -1,15 +1,14 @@
-.tnys-table th {
-  position:sticky;
-  top: 0px;
-}
 
 /* 
 Table styles
 Based on Bulma github.com/jgthms/bulma
 */
+.tnys-table th {
+  position:sticky;
+  top: 0px;
+}
 
 .tnys-table {
-  
   border-collapse: collapse;
   border-spacing: 0;
   user-select: none;
@@ -20,7 +19,6 @@ Based on Bulma github.com/jgthms/bulma
   padding: 0em 0em;
   min-height: 150px;
 }
-
 
 /* remove this block if you don't want first columns as sequential number */
 .tnys-table td:first-child, .tnys-table th:first-child {
@@ -48,8 +46,6 @@ Based on Bulma github.com/jgthms/bulma
   height: 100%;
   border: 1px solid #c6bebe;
 }
-
-
 
 .tnys-table th {
   padding: 6px;
@@ -99,8 +95,7 @@ input:focus {
   outline: none;
 }
 
-.tnys-editing {
-  
+.tnys-editing {  
 }
 
 .tnys-table th:first-child {
