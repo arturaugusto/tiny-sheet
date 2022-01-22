@@ -1,4 +1,4 @@
-tinySheet = function(containerEl, options) {
+const tinySheet = function(containerEl, options) {
   this.containerEl = containerEl
   
   let elements = Array.from(containerEl.getElementsByTagName('input'))
@@ -810,3 +810,9 @@ tinySheet = function(containerEl, options) {
     return str;
   }
 };
+
+if (window) {
+  window.tinySheet = tinySheet
+}
+
+export default {tinySheet}
