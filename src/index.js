@@ -815,4 +815,4 @@ if (window) {
   window.tinySheet = tinySheet
 }
 
-export default {tinySheet}
+export default tinySheet
